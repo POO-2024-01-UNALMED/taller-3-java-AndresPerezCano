@@ -44,9 +44,11 @@ public class TV {
 		return control;
 	}
 	
-	public void conteoTV() {
+	public void setNumTV(int numTV) {
 		numTV ++;
-		
+	}
+	public int getNumTV() {
+		return numTV;
 	}
 	public void turnOn() {
 		estado = true;
