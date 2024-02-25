@@ -4,15 +4,19 @@ public class TV {
 	private static int numTV;
 	
 	private Marca marca;
-	private int canal = 1;
-	private int precio = 500;
+	private int canal;
+	private int precio;
 	public boolean estado;
-	private int volumen = 1;
+	private int volumen;
 	private Control control;
 	
 	public TV (Marca marca, boolean estado) {
 		this.marca = marca;
 		this.estado = estado; 
+		this.canal = 1;
+		this.precio = 500;
+		this.volumen = 1;
+		numTV ++;
 	}
 	public void setMarca(Marca marca) {
 		this.marca = marca;
@@ -61,32 +65,24 @@ public class TV {
 		return estado;
 	}
 	public void canalUp() {
-		if (estado == true) {
-			if (1 <= canal && canal < 120) {
-				canal ++;
+		if (estado && canal < 120) {
+			canal ++;	
 			}
-		}
 	}
 	public void canalDown() {
-		if (estado == true) {
-			if (1 < canal && canal <= 120) {
+		if (estado && canal > 1) {
 				canal --;
-			}
 		}
 	}
 	public void volumenUp() {
-		if (estado == true) {
-			if (0 <= volumen && volumen < 7) {
+		if (estado && volumen < 7) {
 				volumen ++;
 			}
 		}
-	}
     public void volumenDown() {
-    	if (estado == true) {
-    		if (0 < volumen && volumen <= 7) {
+    	if (estado && volumen > 0) {
     			volumen --;
     		}
     	}
     }
 
-}
