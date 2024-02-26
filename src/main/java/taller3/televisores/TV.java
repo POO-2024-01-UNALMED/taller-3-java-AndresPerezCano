@@ -16,7 +16,7 @@ public class TV {
 		this.canal = 1;
 		this.precio = 500;
 		this.volumen = 1;
-		numTV++;
+		TV.numTV++;
 	}
 	public void setMarca(Marca marca) {
 		this.marca = marca;
